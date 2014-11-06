@@ -1,0 +1,28 @@
+New Recipe
+
+<%= bootstrap_form_tag recipes_path do |f| %>
+  <div>
+    <%= label_tag "recipe_form[name]", "Name" %>
+    <%= text_field_tag "recipe_form[name]" %>
+  </div>
+
+  <div>
+    <%= label_tag "recipe_form[instructions]", "Instructions" %>
+    <%= text_field_tag "recipe_form[instructions]" %>
+  </div>
+
+  <div>
+    <%= label_tag "recipe_form[cat]", "Category" %>
+    <%= text_field_tag "recipe_form[cat]" %>
+  </div>
+
+  <div>
+    <% Ingredient.all.each do |i| %>
+      <p><%= check_box_tag "recipe_form[ingredients][]", i.id %>
+      <%= label_tag "recipe_form[ingredients][]", i.name %></p>
+    <% end %>
+
+  </div>
+
+  <%= submit_tag %>
+<% end %>

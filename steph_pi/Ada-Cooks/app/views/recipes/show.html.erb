@@ -1,0 +1,13 @@
+  <h3><p><%= @recipe.name %></p></h3>
+
+  <p>Instructions: <%= @recipe.instructions %></p>
+  <p>Category: <%= @recipe.cat %></p>
+  <p>Ingredients:
+    <p><% @recipe.ingredients.each do |i| %>
+      <li><%= i.name %></li>
+    </p>
+  </p>
+  <% end %>
+
+    <%= button_to "Delete", recipe_path, method: :delete, class: 'btn btn-danger' %>
+    <%= button_to "Edit", "/recipes/#{@recipe.id}/edit", {class: 'btn btn-info'} %>

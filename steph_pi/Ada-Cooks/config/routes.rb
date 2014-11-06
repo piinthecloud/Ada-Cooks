@@ -1,4 +1,26 @@
 Rails.application.routes.draw do
+
+
+
+  get "/recipes",         to: "recipes#index", as: :recipes
+  get "/recipes/:id",     to: "recipes#show", as: :recipe
+
+
+  get "/recipes/new",     to: "recipes#new"
+
+  post "/recipes",        to: "recipes#create"
+
+  delete "/recipes/:id",  to: "recipes#destroy"
+
+  get    "/recipes/:id/edit",  to: "recipes#edit",    as: :edit_recipe
+  post   "/recipes/:id/edit",  to: "recipes#edit"
+
+  put    "/recipes/:id",       to: "recipes#update"
+  post  "/recipes/:id",       to: "recipes#update"
+
+
+  root to: "cookbook#index"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
