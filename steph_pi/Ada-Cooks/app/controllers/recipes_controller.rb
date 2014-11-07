@@ -26,9 +26,9 @@ class RecipesController < ApplicationController
   end
 
   def update
-    @recipe = Recipe.find(params[:id])
-    if @recipe.update(recipe_form_params)
-      redirect_to recipe_path
+    @recipe_form = RecipeForm.new(params[:recipe_form])
+    if @recipe_form.update(params[:id])
+      redirect_to recipe_path(@recipe_form.recipe.id)
     else
       render :edit
     end
@@ -46,11 +46,11 @@ class RecipesController < ApplicationController
   private
 
   def recipe_form_params
-    params.require(:recipe_form).permit(:name, :instruction, :cat)
+    params.require(:recipe_form).permit(:name, :instructions, :cat)
   end
 
   def recipe_params
-    params.require(:recipe).permit(:name, :instruction, :cat)
+    params.require(:recipe).permit(:name, :instructions, :cat)
   end
 
 end

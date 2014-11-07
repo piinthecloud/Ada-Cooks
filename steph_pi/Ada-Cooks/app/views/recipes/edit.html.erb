@@ -26,3 +26,7 @@ EDIT RECIPE
 
   <%= submit_tag %>
 <% end %>
+
+<% @recipe.ingredients.each do |i|%>
+  <%= i.name %>
+<% end %>

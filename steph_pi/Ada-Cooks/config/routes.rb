@@ -2,11 +2,12 @@ Rails.application.routes.draw do
 
 
 
+  get "/recipes/new",     to: "recipes#new", as: :recipes_new
+
   get "/recipes",         to: "recipes#index", as: :recipes
   get "/recipes/:id",     to: "recipes#show", as: :recipe
 
 
-  get "/recipes/new",     to: "recipes#new"
 
   post "/recipes",        to: "recipes#create"
 
