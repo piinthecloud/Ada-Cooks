@@ -1,8 +1,14 @@
 // Place all the styles related to the Cookbook controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+// * {
+//   border: 1px solid pink;
+// }
+
 body {
   color: black;
+  margin: 25px;
+
 }
 
 html {
@@ -16,7 +22,15 @@ html {
 }
 
 .header {
-  // color: red;
+  height: 150px;
+
+
+}
+.header h1{
+  // background-color: red;
+  text-align: center;
+  font-size: 72px;
+
 }
 
 .header a{
