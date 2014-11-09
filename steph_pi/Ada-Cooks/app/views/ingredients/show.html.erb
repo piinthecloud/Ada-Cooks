@@ -1,0 +1,14 @@
+<h3>
+  <p>
+    <%= @ingredient.name %>
+  </p>
+</h3>
+
+<p>Ingredient: <%= @ingredient.name %></p>
+
+
+  <%= button_to "Delete",
+      ingredient_path,
+      method: :delete,
+      class: 'btn btn-danger'
+  %>

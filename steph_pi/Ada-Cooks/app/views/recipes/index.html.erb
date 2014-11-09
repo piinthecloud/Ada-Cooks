@@ -2,3 +2,5 @@
   <% Recipe.all.each do |recipe| %>
     <h6><%= link_to(recipe.name, recipe_path(recipe.id)) %></h6>
   <%end %>
+
+  <%= button_to "New", recipes_new_path, class: 'btn btn-default' %>

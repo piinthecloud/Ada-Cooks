@@ -2,23 +2,37 @@ Rails.application.routes.draw do
 
 
 
-  get "/recipes/new",     to: "recipes#new", as: :recipes_new
+get    "/recipes/new",        to: "recipes#new",     as: :recipes_new
+post   "/recipes/new",        to: "recipes#new"
 
-  get "/recipes",         to: "recipes#index", as: :recipes
-  get "/recipes/:id",     to: "recipes#show", as: :recipe
+get    "/recipes",            to: "recipes#index",   as: :recipes
+get    "/recipes/:id",        to: "recipes#show",    as: :recipe
+
+post   "/recipes",            to: "recipes#create"
+
+delete "/recipes/:id",        to: "recipes#destroy"
+
+get    "/recipes/:id/edit",   to: "recipes#edit",    as: :edit_recipe
+post   "/recipes/:id/edit",   to: "recipes#edit"
+
+put    "/recipes/:id",        to: "recipes#update"
+post   "/recipes/:id",        to: "recipes#update"
 
 
 
-  post "/recipes",        to: "recipes#create"
+################################################################################
+get    "/ingredients",        to: "ingredients#index", as: :ingredients
 
-  delete "/recipes/:id",  to: "recipes#destroy"
+get    "/ingredients/:id",    to: "ingredients#show",  as: :ingredient
 
-  get    "/recipes/:id/edit",  to: "recipes#edit",    as: :edit_recipe
-  post   "/recipes/:id/edit",  to: "recipes#edit"
+get    "/ingredients/new",    to: "ingredients#new",   as: :ingredients_new
+post   "/ingredients/new",    to: "ingredients#new"
 
-  put    "/recipes/:id",       to: "recipes#update"
-  post  "/recipes/:id",       to: "recipes#update"
+post   "/ingredients",        to: "ingredients#create"
 
+delete "/ingredients/:id",    to: "ingredients#destroy"
+
+################################################################################
 
   root to: "cookbook#index"
 

@@ -1,0 +1,11 @@
+<h2>New Ingredient</h2>
+
+<%= form_tag ingredients_path %>
+  <div >
+    <%= label_tag "ingredient[name]", "Name" %>
+    <%= text_field_tag "ingredient[name]" %>
+  </div>
+
+
+
+  <%= submit_tag %>

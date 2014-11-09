@@ -1,6 +1,6 @@
 EDIT RECIPE
 
-<%= form_tag recipe_path do |f| %>
+<%= form_tag recipe_path %>
   <div>
     <%= label_tag "recipe_form[name]", "Name" %>
     <%= text_field_tag "recipe_form[name]", "#{@recipe.name}"  %>
@@ -25,7 +25,7 @@ EDIT RECIPE
   </div>
 
   <%= submit_tag %>
-<% end %>
+
 
 <% @recipe.ingredients.each do |i|%>
   <%= i.name %>

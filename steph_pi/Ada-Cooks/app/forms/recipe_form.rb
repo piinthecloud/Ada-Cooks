@@ -22,8 +22,6 @@ class RecipeForm
     @attributes[:ingredients].each do |id|
       RecipeIngredient.create(ingredient_id: id, recipe_id: @recipe.id)
     end
-
-
   end
 
   def update(recipe_id)

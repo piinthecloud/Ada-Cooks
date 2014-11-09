@@ -1,0 +1,6 @@
+
+  <% Ingredient.all.each do |ingredient| %>
+    <h6><%= link_to(ingredient.name, ingredient_path(ingredient.id)) %></h6>
+  <%end %>
+
+<%= button_to "New", ingredients_new_path, class: 'btn btn-default' %>
