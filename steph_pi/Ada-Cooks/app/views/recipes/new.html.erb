@@ -17,10 +17,10 @@
     <%= text_field_tag "recipe_form[cat]" %>
   </div>
 
-  <!-- <div>
-    <%= label_tag "ingredient[name]", "Ingredient" %>
-    <%= text_field_tag "ingredient[name]" %>
-  </div> -->
+  <div>
+    <%= label_tag "recipe_form[ingredient][name]", "Ingredient" %>
+    <%= text_field_tag "recipe_form[ingredient][name]" %>
+  </div>
 
   <div>
     <% Ingredient.all.each do |i| %>

@@ -19,6 +19,14 @@ class RecipeForm
       cat:          @attributes[:cat]
       )
 
+    @recipe.ingredients << @new_ingredient = Ingredient.create(name: @attributes[:ingredient][:name])
+    #
+    # @new_ingredient = Ingredient.create(name: @attributes[:ingredient][:name])
+    #   if @new_ingredient
+    #     RecipeIngredient.create(ingredient_id: @new_ingredient.id, recipe_id: @recipe.id)
+    #   end
+
+
     @attributes[:ingredients].each do |id|
       RecipeIngredient.create(ingredient_id: id, recipe_id: @recipe.id)
     end
@@ -45,3 +53,16 @@ class RecipeForm
 
 
 end
+
+
+ # "recipe_form"=>{"name"=>"success", "instructions"=>"jump for joy", "cat"=>"yayzzz", "ingredients"=>["2"],  "ingredient"=>{"name"=>"happiness"}},,
+
+
+
+
+
+
+
+
+
+ #
